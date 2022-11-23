@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- calendar (find available slots) -->
+    <dimen name="guideline_start_percent" format="float">0.04f</dimen>
+    <dimen name="guideline_end_percent" format="float">0.96f</dimen>
+
+</resources>

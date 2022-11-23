@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">TestUIapp</string>
+    <string name="user">Test user</string>
+    <string name="test_fab">Test fab</string>
+    <string name="home">Home</string>
+    <string name="favorite">Favorite</string>
+    <string name="search">Search</string>
+    <string name="profile">Profile</string>
+    <string name="november">November</string>
+    <string name="number">Number</string>
+</resources>
