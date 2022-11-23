@@ -99,7 +99,7 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:elevation="1dp"
-            app:layout_constraintGuide_begin="@dimen/_36sdp" />
+            app:layout_constraintGuide_begin="@dimen/_40sdp" />
 
         <androidx.fragment.app.FragmentContainerView
             android:id="@+id/nav_host_fragment_content_main"

@@ -14,15 +14,6 @@
         android:layout_marginTop="@dimen/_12sdp">
 
         <View
-            android:id="@+id/vStartTopMargin"
-            android:layout_width="0dp"
-            android:layout_height="@dimen/_24sdp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toTopOf="@id/viewItemRecycler" />
-
-        <View
             android:id="@+id/viewItemRecycler"
             android:layout_width="0dp"
             android:layout_height="@dimen/_48sdp"
@@ -31,7 +22,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/vStartTopMargin"
+            app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.0" />
 
         <TextView

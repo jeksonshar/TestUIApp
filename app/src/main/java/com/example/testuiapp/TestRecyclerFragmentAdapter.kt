@@ -1,7 +1,6 @@
 package com.example.testuiapp
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
@@ -20,7 +19,7 @@ class TestRecyclerFragmentAdapter :
 
     override fun onBindViewHolder(holder: TestRecyclerFragmentViewHolder, position: Int) {
         getItem(position).let {
-            holder.bind(it, position)
+            holder.bind(it)
         }
     }
 }
@@ -28,12 +27,8 @@ class TestRecyclerFragmentAdapter :
 class TestRecyclerFragmentViewHolder(private val binding: FragmentTestRecyclerItemBinding) :
     RecyclerView.ViewHolder(binding.root) {
 
-    fun bind(model: Model, position: Int) {
+    fun bind(model: Model) {
         binding.tvItemRecycler.text = "${model.orderNumber}"
-        when {
-            position > 0 -> binding.vStartTopMargin.visibility = View.GONE
-            position == 0 -> binding.vStartTopMargin.visibility = View.VISIBLE
-        }
     }
 
     companion object {

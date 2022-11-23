@@ -51,6 +51,8 @@ class TestRecyclerFragment : Fragment() {
         binding.lifecycleOwner = this
 
         binding.recycler.adapter = adapter
+        val topFirstBottomLastMargin = TopFirstBottomLastMarginItemDecorator(24)
+        binding.recycler.addItemDecoration(topFirstBottomLastMargin)
         adapter.submitList(itemsList)
         return binding.root
     }
