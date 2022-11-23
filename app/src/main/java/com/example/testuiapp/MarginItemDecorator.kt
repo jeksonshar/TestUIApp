@@ -13,12 +13,14 @@ class TopFirstBottomLastMarginItemDecorator(private val valueInDP: Int) : Recycl
         state: RecyclerView.State
     ) {
         super.getItemOffsets(outRect, view, parent, state)
+        val lastItemIndex = state.itemCount - 1
+        val itemPosition = parent.getChildAdapterPosition(view)
             // cast margin to dp
         val spase = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, valueInDP.toFloat(), view.resources.displayMetrics).toInt()
             // adding marginTop to first item and marginBottom to last item
-        when {
-            parent.getChildAdapterPosition(view) == 0 -> outRect.top = spase
-            parent.getChildAdapterPosition(view) == state.itemCount - 1 -> outRect.bottom = spase
+        when (itemPosition) {
+            0 -> outRect.top = spase
+            lastItemIndex -> outRect.bottom = spase
         }
     }
 }

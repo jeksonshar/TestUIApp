@@ -2,11 +2,10 @@ package com.example.testuiapp
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.appcompat.widget.Toolbar
+import android.view.animation.AnimationUtils
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
-import androidx.navigation.ui.setupWithNavController
 import com.example.testuiapp.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -29,12 +28,16 @@ class MainActivity : AppCompatActivity() {
 
 //        binding.bottomNavigation.setupWithNavController(navController)
 
-        binding.btnToolbarBack.setOnClickListener {
+        val animationAlpha = AnimationUtils.loadAnimation(this, R.anim.alpha)
+        binding.apply {
 
-        }
+            btnToolbarBack.setOnClickListener {
+                it.startAnimation(animationAlpha)
+            }
 
-        binding.btnToolbarInfo.setOnClickListener {
-
+            btnToolbarInfo.setOnClickListener {
+                it.startAnimation(animationAlpha)
+            }
         }
     }
 

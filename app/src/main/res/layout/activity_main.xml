@@ -36,9 +36,10 @@
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/btnToolbarBack"
-                android:layout_width="@dimen/_20sdp"
-                android:layout_height="@dimen/_20sdp"
+                android:layout_width="@dimen/_28sdp"
+                android:layout_height="@dimen/_28sdp"
                 android:layout_gravity="top"
+                android:padding="@dimen/_4sdp"
                 android:layout_marginStart="@dimen/_40sdp"
                 android:src="@drawable/back_navigation_white" />
 
@@ -53,9 +54,10 @@
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/btnToolbarInfo"
-                android:layout_width="@dimen/_20sdp"
-                android:layout_height="@dimen/_20sdp"
+                android:layout_width="@dimen/_28sdp"
+                android:layout_height="@dimen/_28sdp"
                 android:layout_gravity="end|top"
+                android:padding="@dimen/_4sdp"
                 android:layout_marginEnd="@dimen/_40sdp"
                 android:src="@drawable/image" />
 
