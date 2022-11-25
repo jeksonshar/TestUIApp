@@ -1,6 +1,85 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="@dimen/_78sdp"
+    android:background="@drawable/background_banner_progressbar">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/glStartProgress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="@dimen/guideline_start_progress_percent" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/glEndCloseBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="@dimen/guideline_end_close_percent" />
+
+    <ProgressBar
+        android:id="@+id/circularProgressBarBanner"
+        android:layout_width="@dimen/_46sdp"
+        android:layout_height="@dimen/_42sdp"
+        android:indeterminateOnly="false"
+        android:progressDrawable="@drawable/circle_progress"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@id/glStartProgress"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:progress="85" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvProgressBarLoad"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="@+id/circularProgressBarBanner"
+        app:layout_constraintEnd_toEndOf="@+id/circularProgressBarBanner"
+        app:layout_constraintHorizontal_bias="0.55"
+        app:layout_constraintStart_toStartOf="@+id/circularProgressBarBanner"
+        app:layout_constraintTop_toTopOf="@+id/circularProgressBarBanner"
+        tools:text="85%" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvTitleBanner"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_16sdp"
+        android:text="Compete your profile!"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@id/tvDescriptionBanner"
+        app:layout_constraintEnd_toStartOf="@id/btnCloseBannerWithProgress"
+        app:layout_constraintStart_toEndOf="@id/circularProgressBarBanner"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvDescriptionBanner"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="@dimen/_4sdp"
+        android:text="Add your data and become a certified sportsperson "
+        android:textColor="@color/banner_progress_background_color"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/tvTitleBanner"
+        app:layout_constraintStart_toStartOf="@+id/tvTitleBanner"
+        app:layout_constraintTop_toBottomOf="@+id/tvTitleBanner" />
+
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/btnCloseBannerWithProgress"
+        android:layout_width="@dimen/_16sdp"
+        android:layout_height="@dimen/_16sdp"
+        android:src="@android:drawable/ic_menu_close_clear_cancel"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/glEndCloseBtn"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.15" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

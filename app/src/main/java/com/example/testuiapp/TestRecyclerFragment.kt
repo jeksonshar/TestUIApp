@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.animation.AnimationUtils
 import androidx.fragment.app.Fragment
 import com.example.testuiapp.databinding.FragmentTestRecyclerBinding
 
@@ -51,9 +52,26 @@ class TestRecyclerFragment : Fragment() {
         binding.lifecycleOwner = this
 
         binding.recycler.adapter = adapter
-        val topFirstBottomLastMargin = TopFirstBottomLastMarginItemDecorator(24)
+
+        val load = 80
+
+        val animationAlpha = AnimationUtils.loadAnimation(requireContext(), R.anim.alpha)
+
+        var topFirstBottomLastMargin = TopFirstBottomLastMarginItemDecorator(24, binding.testBanner.root.visibility)
         binding.recycler.addItemDecoration(topFirstBottomLastMargin)
         adapter.submitList(itemsList)
+
+        binding.testBanner.circularProgressBarBanner.progress = load
+        binding.testBanner.tvProgressBarLoad.text = requireContext().getString(R.string.val_percent, load)
+
+        binding.testBanner.btnCloseBannerWithProgress.setOnClickListener {
+            it.startAnimation(animationAlpha)
+            binding.testBanner.root.visibility = View.GONE
+            topFirstBottomLastMargin = TopFirstBottomLastMarginItemDecorator(24, binding.testBanner.root.visibility)
+            binding.recycler.addItemDecoration(topFirstBottomLastMargin)
+            adapter.submitList(itemsList)
+        }
+
         return binding.root
     }
 

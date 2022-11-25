@@ -8,4 +8,6 @@
     <string name="profile">Profile</string>
     <string name="november">November</string>
     <string name="number">Number</string>
+    <string name="_25">25%</string>
+    <string name="val_percent">%1$d%%</string>
 </resources>
