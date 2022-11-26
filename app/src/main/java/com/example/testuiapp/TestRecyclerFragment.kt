@@ -14,7 +14,7 @@ class TestRecyclerFragment : Fragment() {
     private val binding: FragmentTestRecyclerBinding
         get() = _binding!!
 
-    private val adapter by lazy { TestRecyclerFragmentAdapter() }
+    private val adapterVertical by lazy { TestRecyclerVerticalFragmentAdapter() }
 
     private val itemsList = listOf(
         Model(1),
@@ -51,15 +51,15 @@ class TestRecyclerFragment : Fragment() {
         _binding = FragmentTestRecyclerBinding.inflate(inflater, container, false)
         binding.lifecycleOwner = this
 
-        binding.recycler.adapter = adapter
+        binding.recyclerVertical.adapter = adapterVertical
 
         val load = 80
 
         val animationAlpha = AnimationUtils.loadAnimation(requireContext(), R.anim.alpha)
 
         var topFirstBottomLastMargin = TopFirstBottomLastMarginItemDecorator(24, binding.testBanner.root.visibility)
-        binding.recycler.addItemDecoration(topFirstBottomLastMargin)
-        adapter.submitList(itemsList)
+        binding.recyclerVertical.addItemDecoration(topFirstBottomLastMargin)
+        adapterVertical.submitList(itemsList)
 
         binding.testBanner.circularProgressBarBanner.progress = load
         binding.testBanner.tvProgressBarLoad.text = requireContext().getString(R.string.val_percent, load)
@@ -68,8 +68,7 @@ class TestRecyclerFragment : Fragment() {
             it.startAnimation(animationAlpha)
             binding.testBanner.root.visibility = View.GONE
             topFirstBottomLastMargin = TopFirstBottomLastMarginItemDecorator(24, binding.testBanner.root.visibility)
-            binding.recycler.addItemDecoration(topFirstBottomLastMargin)
-            adapter.submitList(itemsList)
+            binding.recyclerVertical.addItemDecoration(topFirstBottomLastMargin)
         }
 
         return binding.root

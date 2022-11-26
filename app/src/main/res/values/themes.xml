@@ -20,7 +20,15 @@
         <item name="colorAccent">@color/toolbar_color</item>
         <item name="colorControlActivated">@color/toolbar_color</item>
         <item name="android:windowLightStatusBar" tools:targetApi="m">false</item>
-<!--        <item name="android:windowTranslucentNavigation" >true</item>-->
         <item name="android:statusBarColor" >@color/toolbar_color</item>
+    </style>
+
+    <style name="CircularProgressBar">
+        <item name="android:indeterminateOnly">false</item>
+        <item name="android:progressDrawable">@drawable/circle_progress</item>
+    </style>
+    
+    <style name="VerticalRecyclerItem">
+        <item name="background">@drawable/background_item_recycler</item>
     </style>
 </resources>

@@ -5,9 +5,9 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.example.testuiapp.databinding.FragmentTestRecyclerItemBinding
+import com.example.testuiapp.databinding.FragmentVerticalRecyclerItemBinding
 
-class TestRecyclerFragmentAdapter :
+class TestRecyclerVerticalFragmentAdapter :
     ListAdapter<Model, TestRecyclerFragmentViewHolder>(TestRecyclerItemsComparator()) {
 
     override fun onCreateViewHolder(
@@ -24,7 +24,7 @@ class TestRecyclerFragmentAdapter :
     }
 }
 
-class TestRecyclerFragmentViewHolder(private val binding: FragmentTestRecyclerItemBinding) :
+class TestRecyclerFragmentViewHolder(private val binding: FragmentVerticalRecyclerItemBinding) :
     RecyclerView.ViewHolder(binding.root) {
 
     fun bind(model: Model) {
@@ -34,7 +34,7 @@ class TestRecyclerFragmentViewHolder(private val binding: FragmentTestRecyclerIt
     companion object {
         fun from(parent: ViewGroup): TestRecyclerFragmentViewHolder {
             val inflater = LayoutInflater.from(parent.context)
-            val binding = FragmentTestRecyclerItemBinding.inflate(
+            val binding = FragmentVerticalRecyclerItemBinding.inflate(
                 inflater,
                 parent,
                 false
