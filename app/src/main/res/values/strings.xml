@@ -10,4 +10,8 @@
     <string name="number">Number</string>
     <string name="_25">25%</string>
     <string name="val_percent">%1$d%%</string>
+    <string name="title">Title text</string>
+    <string name="description">Description text</string>
+    <string name="book">Book</string>
+    <string name="events">Events</string>
 </resources>

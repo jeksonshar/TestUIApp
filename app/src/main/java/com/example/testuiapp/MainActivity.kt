@@ -2,7 +2,6 @@ package com.example.testuiapp
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
 import android.view.animation.AnimationUtils
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.NavController

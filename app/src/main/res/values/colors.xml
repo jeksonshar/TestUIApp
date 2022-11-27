@@ -14,6 +14,7 @@
     <color name="gray">#6D6D80</color>
     <color name="gray_white">#D8D8D8</color>
     <color name="recycler_background">#efefef</color>
+    <color name="rating_background">#ff969f</color>
     <color name="banner_background">#2dacc6</color>
     <color name="banner_progress_color">#f22233</color>
     <color name="banner_progress_background_color">#dceaec</color>

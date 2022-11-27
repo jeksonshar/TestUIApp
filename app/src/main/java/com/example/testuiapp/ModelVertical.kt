@@ -1,5 +1,5 @@
 package com.example.testuiapp
 
-data class Model(
+data class ModelVertical(
     val orderNumber: Int
 )

@@ -15,33 +15,52 @@ class TestRecyclerFragment : Fragment() {
         get() = _binding!!
 
     private val adapterVertical by lazy { TestRecyclerVerticalFragmentAdapter() }
+    private val adapterHorizontal by lazy { TestRecyclerHorizontalFragmentAdapter() }
 
-    private val itemsList = listOf(
-        Model(1),
-        Model(2),
-        Model(3),
-        Model(4),
-        Model(5),
-        Model(6),
-        Model(7),
-        Model(8),
-        Model(9),
-        Model(10),
-        Model(11),
-        Model(12),
-        Model(13),
-        Model(14),
-        Model(15),
-        Model(16),
-        Model(17),
-        Model(18),
-        Model(19),
-        Model(20),
-        Model(21),
-        Model(22),
-        Model(23),
-        Model(24),
+    private val itemsListVertical = listOf(
+        ModelVertical(1),
+        ModelVertical(2),
+        ModelVertical(3),
+        ModelVertical(4),
+        ModelVertical(5),
+        ModelVertical(6),
+        ModelVertical(7),
+        ModelVertical(8),
+        ModelVertical(9),
+        ModelVertical(10),
+        ModelVertical(11),
+        ModelVertical(12),
+        ModelVertical(13),
+        ModelVertical(14),
+        ModelVertical(15),
+        ModelVertical(16),
+        ModelVertical(17),
+        ModelVertical(18),
+        ModelVertical(19),
+        ModelVertical(20),
+        ModelVertical(21),
+        ModelVertical(22),
+        ModelVertical(23),
+        ModelVertical(24),
     )
+
+    private val itemsListHorizontal = listOf(
+        ModelRecyclerHorizontal(3.5f, "Fantasy game", "Closed", 4),
+        ModelRecyclerHorizontal(4f, "Action game", "Open", 8),
+        ModelRecyclerHorizontal(2.5f, "Quest", "Closed", 1),
+        ModelRecyclerHorizontal(4.5f, "Rally", "Open", 12),
+        ModelRecyclerHorizontal(3.5f, "Fantasy game", "Closed", 4),
+        ModelRecyclerHorizontal(4f, "Action game", "Open", 8),
+        ModelRecyclerHorizontal(2.5f, "Quest", "Closed", 1),
+        ModelRecyclerHorizontal(4.5f, "Rally", "Open", 12),
+        ModelRecyclerHorizontal(3.5f, "Fantasy game", "Closed", 4),
+        ModelRecyclerHorizontal(4f, "Action game", "Open", 8),
+        ModelRecyclerHorizontal(2.5f, "Quest", "Closed", 1),
+        ModelRecyclerHorizontal(4.5f, "Rally", "Open", 12),
+    )
+
+    private lateinit var itemHorizontalMarginDecorator: MarginHorizontalItemDecorator
+    private lateinit var topFirstBottomLastMarginDecorator: MarginVerticalItemDecorator
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -52,23 +71,24 @@ class TestRecyclerFragment : Fragment() {
         binding.lifecycleOwner = this
 
         binding.recyclerVertical.adapter = adapterVertical
-
-        val load = 80
+        binding.recyclerHorizontal.adapter = adapterHorizontal
 
         val animationAlpha = AnimationUtils.loadAnimation(requireContext(), R.anim.alpha)
-
-        var topFirstBottomLastMargin = TopFirstBottomLastMarginItemDecorator(24, binding.testBanner.root.visibility)
-        binding.recyclerVertical.addItemDecoration(topFirstBottomLastMargin)
-        adapterVertical.submitList(itemsList)
 
         binding.testBanner.circularProgressBarBanner.progress = load
         binding.testBanner.tvProgressBarLoad.text = requireContext().getString(R.string.val_percent, load)
 
+        addHorizontalItemDecorator()
+        topFirstBottomLastMarginDecorator = MarginVerticalItemDecorator(marginTopVerticalValueInDP)
+        binding.recyclerVertical.addItemDecoration(topFirstBottomLastMarginDecorator)
+
+        adapterHorizontal.submitList(itemsListHorizontal)
+        adapterVertical.submitList(itemsListVertical)
+
         binding.testBanner.btnCloseBannerWithProgress.setOnClickListener {
             it.startAnimation(animationAlpha)
             binding.testBanner.root.visibility = View.GONE
-            topFirstBottomLastMargin = TopFirstBottomLastMarginItemDecorator(24, binding.testBanner.root.visibility)
-            binding.recyclerVertical.addItemDecoration(topFirstBottomLastMargin)
+            addHorizontalItemDecorator()
         }
 
         return binding.root
@@ -77,6 +97,21 @@ class TestRecyclerFragment : Fragment() {
     override fun onDestroyView() {
         _binding = null
         super.onDestroyView()
+    }
+
+    private fun addHorizontalItemDecorator() {
+        itemHorizontalMarginDecorator = MarginHorizontalItemDecorator(
+            marginTopHorizontalValueInDP,
+            4,
+            binding.testBanner.root.visibility
+        )
+        binding.recyclerHorizontal.addItemDecoration(itemHorizontalMarginDecorator)
+    }
+
+    companion object {
+        const val load = 80
+        const val marginTopVerticalValueInDP = 12
+        const val marginTopHorizontalValueInDP = 32
     }
 
 }

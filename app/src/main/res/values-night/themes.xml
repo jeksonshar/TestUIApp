@@ -29,6 +29,6 @@
     </style>
 
     <style name="VerticalRecyclerItem">
-        <item name="background">@drawable/background_item_recycler</item>
+        <item name="background">@drawable/background_item_vertical_recycler</item>
     </style>
 </resources>

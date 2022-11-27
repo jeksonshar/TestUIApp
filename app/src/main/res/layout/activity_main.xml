@@ -82,20 +82,6 @@
         <!--                <include layout="@layout/content_main" />-->
 
         <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guideLineStart"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            app:layout_constraintGuide_percent="@dimen/guideline_start_percent" />
-
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guideLineEnd"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            app:layout_constraintGuide_percent="@dimen/guideline_end_percent" />
-
-        <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideLineTop"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -110,9 +96,9 @@
             android:layout_height="0dp"
             app:defaultNavHost="true"
             app:layout_constraintBottom_toTopOf="@id/coordinatorBottomNavigation"
-            app:layout_constraintEnd_toEndOf="@id/guideLineEnd"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="@id/guideLineStart"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/guideLineTop"
             app:layout_constraintVertical_bias="1.0"
             app:navGraph="@navigation/nav_graph" />
