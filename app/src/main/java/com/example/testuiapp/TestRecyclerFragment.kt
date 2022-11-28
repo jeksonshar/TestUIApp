@@ -1,7 +1,6 @@
 package com.example.testuiapp
 
 import android.os.*
-import android.util.Log
 import android.view.HapticFeedbackConstants
 import android.view.LayoutInflater
 import android.view.View
@@ -16,34 +15,15 @@ class TestRecyclerFragment : Fragment() {
     private val binding: FragmentTestRecyclerBinding
         get() = _binding!!
 
-//    lateinit var vibrator: Vibrator
-
     private val adapterVertical by lazy { TestRecyclerVerticalFragmentAdapter() }
     private val adapterHorizontal by lazy {
         TestRecyclerHorizontalFragmentAdapter(
             clickListener = object : ModelHorizontalClickListener {
                 override fun onLongClickListener(model: ModelRecyclerHorizontal) {
-                    Log.d("TAG", "vibrator +++ ")
-//      работает с дефолтной длительностью
-//                    if (Build.VERSION.SDK_INT >= 26) {
-//                        (requireContext().getSystemService(VIBRATOR_SERVICE) as Vibrator).vibrate(VibrationEffect.createOneShot(500, VibrationEffect.DEFAULT_AMPLITUDE))
-//                    } else {
-//                        (requireContext().getSystemService(VIBRATOR_SERVICE) as Vibrator).vibrate(1000)
-//                    }
-
-//     при -1 нестабильные мибрации дефолтной длительности, при 0 и положит числах - бесконечные повторения
-//                    val delay = 0L
-//                    val vibrate = 100L
-//                    val sleep = 300L
-//                    val repeat = 0
-//                    val pattern: LongArray = longArrayOf(delay, vibrate, sleep)
-//                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-//                        vibrator.vibrate(VibrationEffect.createWaveform(pattern, repeat))
-//                    } else {
-//                        vibrator.vibrate(pattern, repeat)
-//                    }
-
-                    //          работает стабильно, пермишн не нужен
+                    /**
+                     *  данный вариан вибрации работает стабильно, пермишн не нужен,
+                     *  варианты закомментированые в прошлом коммите удалил, работали нестабильно и требовали пермишн
+                     *  */
                     requireView().performHapticFeedback(HapticFeedbackConstants.LONG_PRESS)
                 }
             }
@@ -102,13 +82,6 @@ class TestRecyclerFragment : Fragment() {
     ): View {
         _binding = FragmentTestRecyclerBinding.inflate(inflater, container, false)
         binding.lifecycleOwner = this
-
-//        vibrator = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
-//            val vibratorManager = requireContext().getSystemService(VIBRATOR_MANAGER_SERVICE) as VibratorManager
-//            vibratorManager.defaultVibrator
-//        } else {
-//            requireActivity().getSystemService(VIBRATOR_SERVICE) as Vibrator
-//        }
 
         binding.recyclerVertical.adapter = adapterVertical
         binding.recyclerHorizontal.adapter = adapterHorizontal

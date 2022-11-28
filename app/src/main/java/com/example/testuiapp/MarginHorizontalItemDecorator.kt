@@ -23,7 +23,7 @@ class MarginHorizontalItemDecorator(
         val topSpase = calculateIntValue(view, topValueInDP)
         val startSpase = calculateIntValue(view, startValueInDP)
 
-        if(bannerVisibility != View.VISIBLE) outRect.top = topSpase
+        if (bannerVisibility != View.VISIBLE) outRect.top = topSpase
         when (itemPosition) {
             0 -> outRect.left = startSpase
         }

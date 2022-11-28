@@ -40,7 +40,8 @@ class TestRecyclerHorizontalFragmentViewHolder(
                 clickListener.onLongClickListener(it)
                 view.startAnimation(animationScale)
             }
-            return@setOnLongClickListener true   // возвращая true получаю двойную вибрацию: системную + казанную в clickListener
+            /** возвращая true получаю двойную вибрацию: системную + казанную в clickListener */
+            return@setOnLongClickListener true
         }
         animationScale.setAnimationListener(object : AnimationListener {
             override fun onAnimationStart(animation: Animation?) {
