@@ -16,11 +16,11 @@ class MarginVerticalItemDecorator(
         state: RecyclerView.State
     ) {
         super.getItemOffsets(outRect, view, parent, state)
+
         val itemPosition = parent.getChildAdapterPosition(view)
         // cast margin to dp
         val topSpase = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, topValueInDP.toFloat(), view.resources.displayMetrics).toInt()
         // adding marginTop to first item and marginBottom to last item
-        Log.d("TAG", "topValue for vertical = $topSpase")
         when (itemPosition) {
             0 -> outRect.top = topSpase/2
         }

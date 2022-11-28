@@ -9,7 +9,8 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/containerTestRecycler"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:animateLayoutChanges="true">
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideLineStart"
@@ -67,7 +68,6 @@
                 android:orientation="vertical"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
         </androidx.coordinatorlayout.widget.CoordinatorLayout>
-
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

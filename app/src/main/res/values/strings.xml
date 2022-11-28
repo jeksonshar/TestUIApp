@@ -14,4 +14,7 @@
     <string name="description">Description text</string>
     <string name="book">Book</string>
     <string name="events">Events</string>
+    <string name="add_your_data_and_become_a_certified_sportsperson">Add your data and become a certified sportsperson</string>
+    <string name="compete_your_profile">Compete your profile!</string>
+    <string name="_5">5</string>
 </resources>

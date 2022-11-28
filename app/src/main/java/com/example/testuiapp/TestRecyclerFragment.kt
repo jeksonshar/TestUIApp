@@ -1,6 +1,8 @@
 package com.example.testuiapp
 
-import android.os.Bundle
+import android.os.*
+import android.util.Log
+import android.view.HapticFeedbackConstants
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -14,8 +16,39 @@ class TestRecyclerFragment : Fragment() {
     private val binding: FragmentTestRecyclerBinding
         get() = _binding!!
 
+//    lateinit var vibrator: Vibrator
+
     private val adapterVertical by lazy { TestRecyclerVerticalFragmentAdapter() }
-    private val adapterHorizontal by lazy { TestRecyclerHorizontalFragmentAdapter() }
+    private val adapterHorizontal by lazy {
+        TestRecyclerHorizontalFragmentAdapter(
+            clickListener = object : ModelHorizontalClickListener {
+                override fun onLongClickListener(model: ModelRecyclerHorizontal) {
+                    Log.d("TAG", "vibrator +++ ")
+//      работает с дефолтной длительностью
+//                    if (Build.VERSION.SDK_INT >= 26) {
+//                        (requireContext().getSystemService(VIBRATOR_SERVICE) as Vibrator).vibrate(VibrationEffect.createOneShot(500, VibrationEffect.DEFAULT_AMPLITUDE))
+//                    } else {
+//                        (requireContext().getSystemService(VIBRATOR_SERVICE) as Vibrator).vibrate(1000)
+//                    }
+
+//     при -1 нестабильные мибрации дефолтной длительности, при 0 и положит числах - бесконечные повторения
+//                    val delay = 0L
+//                    val vibrate = 100L
+//                    val sleep = 300L
+//                    val repeat = 0
+//                    val pattern: LongArray = longArrayOf(delay, vibrate, sleep)
+//                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+//                        vibrator.vibrate(VibrationEffect.createWaveform(pattern, repeat))
+//                    } else {
+//                        vibrator.vibrate(pattern, repeat)
+//                    }
+
+                    //          работает стабильно, пермишн не нужен
+                    requireView().performHapticFeedback(HapticFeedbackConstants.LONG_PRESS)
+                }
+            }
+        )
+    }
 
     private val itemsListVertical = listOf(
         ModelVertical(1),
@@ -70,16 +103,23 @@ class TestRecyclerFragment : Fragment() {
         _binding = FragmentTestRecyclerBinding.inflate(inflater, container, false)
         binding.lifecycleOwner = this
 
+//        vibrator = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+//            val vibratorManager = requireContext().getSystemService(VIBRATOR_MANAGER_SERVICE) as VibratorManager
+//            vibratorManager.defaultVibrator
+//        } else {
+//            requireActivity().getSystemService(VIBRATOR_SERVICE) as Vibrator
+//        }
+
         binding.recyclerVertical.adapter = adapterVertical
         binding.recyclerHorizontal.adapter = adapterHorizontal
 
-        val animationAlpha = AnimationUtils.loadAnimation(requireContext(), R.anim.alpha)
+        val animationAlpha = AnimationUtils.loadAnimation(requireContext(), R.anim.animation_alpha)
 
         binding.testBanner.circularProgressBarBanner.progress = load
         binding.testBanner.tvProgressBarLoad.text = requireContext().getString(R.string.val_percent, load)
 
         addHorizontalItemDecorator()
-        topFirstBottomLastMarginDecorator = MarginVerticalItemDecorator(marginTopVerticalValueInDP)
+        topFirstBottomLastMarginDecorator = MarginVerticalItemDecorator(marginTopValueInDPForVerticalItem)
         binding.recyclerVertical.addItemDecoration(topFirstBottomLastMarginDecorator)
 
         adapterHorizontal.submitList(itemsListHorizontal)
@@ -101,8 +141,8 @@ class TestRecyclerFragment : Fragment() {
 
     private fun addHorizontalItemDecorator() {
         itemHorizontalMarginDecorator = MarginHorizontalItemDecorator(
-            marginTopHorizontalValueInDP,
-            4,
+            marginTopValueInDPForHorizontalItem,
+            marginStartValueInDPForHorizontalItem,
             binding.testBanner.root.visibility
         )
         binding.recyclerHorizontal.addItemDecoration(itemHorizontalMarginDecorator)
@@ -110,8 +150,9 @@ class TestRecyclerFragment : Fragment() {
 
     companion object {
         const val load = 80
-        const val marginTopVerticalValueInDP = 12
-        const val marginTopHorizontalValueInDP = 32
+        const val marginTopValueInDPForVerticalItem = 12
+        const val marginTopValueInDPForHorizontalItem = 32
+        const val marginStartValueInDPForHorizontalItem = 4
     }
 
 }

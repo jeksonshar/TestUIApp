@@ -28,7 +28,7 @@ class MainActivity : AppCompatActivity() {
 
 //        binding.bottomNavigation.setupWithNavController(navController)
 
-        val animationAlpha = AnimationUtils.loadAnimation(this, R.anim.alpha)
+        val animationAlpha = AnimationUtils.loadAnimation(this, R.anim.animation_alpha)
         binding.apply {
 
             btnToolbarBack.setOnClickListener {

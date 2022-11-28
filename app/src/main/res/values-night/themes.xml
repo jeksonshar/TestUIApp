@@ -31,4 +31,8 @@
     <style name="VerticalRecyclerItem">
         <item name="background">@drawable/background_item_vertical_recycler</item>
     </style>
+
+    <style name="RatingBar" parent="Widget.AppCompat.RatingBar.Indicator">
+        <item name="android:progressDrawable">@drawable/custom_rating_bar</item>
+    </style>
 </resources>

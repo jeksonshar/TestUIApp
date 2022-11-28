@@ -95,7 +95,7 @@
                     android:background="@drawable/background_events_count"
                     android:elevation="@dimen/_10sdp"
                     android:paddingHorizontal="@dimen/_5sdp"
-                    android:text="5"
+                    android:text="@string/_5"
                     android:textColor="@color/white"
                     app:layout_constraintEnd_toEndOf="@id/btnEventsHorizontalItem"
                     app:layout_constraintTop_toTopOf="@id/btnEventsHorizontalItem" />
