@@ -7,4 +7,7 @@
     <dimen name="guideline_start_progress_percent" format="float">0.02f</dimen>
     <dimen name="guideline_end_close_percent" format="float">0.97f</dimen>
 
+    <dimen name="guideline_start_6_percent" format="float">0.06f</dimen>
+    <dimen name="guideline_end_94_percent" format="float">0.94f</dimen>
+
 </resources>

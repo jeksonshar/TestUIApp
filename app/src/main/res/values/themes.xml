@@ -35,4 +35,24 @@
     <style name="RatingBar" parent="Widget.AppCompat.RatingBar.Indicator">
         <item name="android:progressDrawable">@drawable/custom_rating_bar</item>
     </style>
+
+    <style name="BottomSheetDialogDefineTheme" parent="Theme.Design.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/ModalDefineStyle</item>
+    </style>
+
+    <style name="ModalDefineStyle" parent="Widget.Design.BottomSheet.Modal">
+        <item name="android:background">@drawable/bottom_sheet_define_background</item>
+    </style>
+
+    <style name="ButtonBottomSheet.White" parent="ThemeOverlay.AppCompat">
+        <item name="android:background">@drawable/button_bottom_sheet_background</item>
+    </style>
+
+    <style name="BottomSheetDialogSelectActivityTheme" parent="Theme.Design.Light.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/BottomSheetSelectActivityStyle</item>
+    </style>
+
+    <style name="BottomSheetSelectActivityStyle" parent="Widget.Design.BottomSheet.Modal">
+        <item name="android:background">@android:color/transparent</item>
+    </style>
 </resources>

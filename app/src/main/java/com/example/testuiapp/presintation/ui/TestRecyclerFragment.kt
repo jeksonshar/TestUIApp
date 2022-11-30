@@ -1,4 +1,4 @@
-package com.example.testuiapp
+package com.example.testuiapp.presintation.ui
 
 import android.os.*
 import android.view.HapticFeedbackConstants
@@ -7,7 +7,15 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.animation.AnimationUtils
 import androidx.fragment.app.Fragment
+import com.example.testuiapp.R
 import com.example.testuiapp.databinding.FragmentTestRecyclerBinding
+import com.example.testuiapp.presintation.ui.horizontalrecycler.MarginHorizontalItemDecorator
+import com.example.testuiapp.presintation.ui.horizontalrecycler.ModelHorizontalClickListener
+import com.example.testuiapp.presintation.ui.horizontalrecycler.TestRecyclerHorizontalFragmentAdapter
+import com.example.testuiapp.business.models.ModelRecyclerHorizontal
+import com.example.testuiapp.business.models.ModelVertical
+import com.example.testuiapp.presintation.ui.verticalrecycler.MarginVerticalItemDecorator
+import com.example.testuiapp.presintation.ui.verticalrecycler.TestRecyclerVerticalFragmentAdapter
 
 class TestRecyclerFragment : Fragment() {
 
@@ -20,6 +28,10 @@ class TestRecyclerFragment : Fragment() {
         TestRecyclerHorizontalFragmentAdapter(
             clickListener = object : ModelHorizontalClickListener {
                 override fun onLongClickListener(model: ModelRecyclerHorizontal) {
+                    /**
+                     *  данный вариан вибрации работает стабильно, пермишн не нужен,
+                     *  варианты закомментированые в прошлом коммите удалил, работали нестабильно и требовали пермишн
+                     *  */
                     /**
                      *  данный вариан вибрации работает стабильно, пермишн не нужен,
                      *  варианты закомментированые в прошлом коммите удалил, работали нестабильно и требовали пермишн

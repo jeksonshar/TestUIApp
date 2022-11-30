@@ -7,6 +7,8 @@ import androidx.databinding.DataBindingUtil
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import com.example.testuiapp.databinding.ActivityMainBinding
+import com.example.testuiapp.presintation.ui.BottomSheetDefineFragment
+import com.example.testuiapp.presintation.ui.BottomSheetSelectActivityFragment
 
 class MainActivity : AppCompatActivity() {
 
@@ -37,6 +39,14 @@ class MainActivity : AppCompatActivity() {
 
             btnToolbarInfo.setOnClickListener {
                 it.startAnimation(animationAlpha)
+            }
+
+            fab.setOnClickListener {
+                BottomSheetDefineFragment().show(supportFragmentManager, "tag")
+            }
+
+            fabBottomNavigation.setOnClickListener {
+                BottomSheetSelectActivityFragment().show(supportFragmentManager, "TAG")
             }
         }
     }

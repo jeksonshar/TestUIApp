@@ -17,4 +17,15 @@
     <string name="add_your_data_and_become_a_certified_sportsperson">Add your data and become a certified sportsperson</string>
     <string name="compete_your_profile">Compete your profile!</string>
     <string name="_5">5</string>
+    <string name="define_your_level_for_this_activity">Define your level for this activity</string>
+    <string name="not_now">Not now</string>
+    <string name="define_your_level">Define your level</string>
+    <string name="it_seems_that_you_have_not_yet_identified_your_level_for">It seems that you have not yet identified your level for</string>
+    <string name="select_activity">SELECT ACTIVITY</string>
+    <string name="places_available">Places available</string>
+    <string name="_20">20</string>
+    <string name="cancel">Cancel</string>
+    <string name="antigravity">Antigravity</string>
+    <string name="aqua_gym">Aqua gym</string>
+    <string name="arrow_right"><![CDATA[>]]></string>
 </resources>

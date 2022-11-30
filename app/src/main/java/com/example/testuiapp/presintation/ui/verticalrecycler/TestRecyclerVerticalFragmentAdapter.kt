@@ -1,4 +1,4 @@
-package com.example.testuiapp
+package com.example.testuiapp.presintation.ui.verticalrecycler
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.testuiapp.databinding.FragmentVerticalRecyclerItemBinding
+import com.example.testuiapp.business.models.ModelVertical
 
 class TestRecyclerVerticalFragmentAdapter :
     ListAdapter<ModelVertical, TestRecyclerVerticalFragmentViewHolder>(TestRecyclerVerticalItemsComparator()) {

@@ -1,4 +1,4 @@
-package com.example.testuiapp
+package com.example.testuiapp.presintation.ui.horizontalrecycler
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -8,7 +8,9 @@ import android.view.animation.AnimationUtils
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.example.testuiapp.R
 import com.example.testuiapp.databinding.FragmentHorizontalRecyclerItemBinding
+import com.example.testuiapp.business.models.ModelRecyclerHorizontal
 
 class TestRecyclerHorizontalFragmentAdapter(
     private val clickListener: ModelHorizontalClickListener

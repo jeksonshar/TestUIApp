@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_marginHorizontal="@dimen/_4sdp">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="@dimen/_16sdp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/select_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideLineStart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="@dimen/guideline_start_6_percent" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideLineEnd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="@dimen/guideline_end_percent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvSelectActivity"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="@color/toolbar_color"
+                android:paddingVertical="@dimen/_12sdp"
+                android:text="@string/select_activity"
+                android:textColor="@color/white"
+                android:textAlignment="center"
+                app:layout_constraintBottom_toTopOf="@id/tvTitleItem1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvTitleItem1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:text="@string/aqua_gym"
+                android:textSize="@dimen/_12sdp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@id/tvDescriptionItem1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/guideLineStart"
+                app:layout_constraintTop_toBottomOf="@id/tvSelectActivity" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvDescriptionItem1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_22sdp"
+                android:text="@string/places_available"
+                app:layout_constraintBottom_toTopOf="@id/separatorSelectActivity"
+                app:layout_constraintStart_toStartOf="@id/guideLineStart"
+                app:layout_constraintEnd_toStartOf="@id/tvCountItem1"
+                app:layout_constraintTop_toBottomOf="@id/tvTitleItem1" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvCountItem1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_12sdp"
+                android:background="@drawable/count_bottom_sheet_background"
+                android:text="@string/_20"
+                app:layout_constraintBottom_toBottomOf="@id/tvDescriptionItem1"
+                app:layout_constraintEnd_toStartOf="@id/tvArrowItem1"
+                app:layout_constraintStart_toEndOf="@id/tvDescriptionItem1"
+                app:layout_constraintTop_toTopOf="@id/tvDescriptionItem1" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvArrowItem1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/arrow_right"
+                android:textSize="@dimen/_16sdp"
+                app:layout_constraintBottom_toBottomOf="@id/tvCountItem1"
+                app:layout_constraintEnd_toStartOf="@id/guideLineEnd"
+                app:layout_constraintStart_toEndOf="@id/tvCountItem1"
+                app:layout_constraintTop_toTopOf="@id/tvCountItem1" />
+
+            <View
+                android:id="@+id/separatorSelectActivity"
+                android:layout_width="0dp"
+                android:layout_height="2dp"
+                android:background="@color/gray_white"
+                app:layout_constraintBottom_toTopOf="@id/tvTitleItem2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvDescriptionItem1" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvTitleItem2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:text="@string/antigravity"
+                android:textSize="@dimen/_12sdp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@id/tvDescriptionItem2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/guideLineStart"
+                app:layout_constraintTop_toBottomOf="@id/separatorSelectActivity" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvDescriptionItem2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_22sdp"
+                android:text="@string/places_available"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="@id/guideLineStart"
+                app:layout_constraintEnd_toStartOf="@id/tvCountItem2"
+                app:layout_constraintTop_toBottomOf="@id/tvTitleItem2" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvCountItem2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_12sdp"
+                android:background="@drawable/count_bottom_sheet_background"
+                android:text="@string/_20"
+                app:layout_constraintBottom_toBottomOf="@id/tvDescriptionItem2"
+                app:layout_constraintEnd_toStartOf="@id/tvArrowItem2"
+                app:layout_constraintStart_toEndOf="@id/tvDescriptionItem2"
+                app:layout_constraintTop_toTopOf="@id/tvDescriptionItem2" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvArrowItem2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/arrow_right"
+                android:textSize="@dimen/_16sdp"
+                app:layout_constraintBottom_toBottomOf="@id/tvCountItem2"
+                app:layout_constraintEnd_toStartOf="@id/guideLineEnd"
+                app:layout_constraintStart_toEndOf="@id/tvCountItem2"
+                app:layout_constraintTop_toTopOf="@id/tvCountItem2" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_6sdp"
+        android:layout_marginBottom="@dimen/_16sdp"
+        android:background="@drawable/button_bsh_select_activity"
+        android:text="@string/cancel"
+        android:textAllCaps="false"/>
+
+
+
+</androidx.appcompat.widget.LinearLayoutCompat>

@@ -1,4 +1,4 @@
-package com.example.testuiapp
+package com.example.testuiapp.presintation.ui.horizontalrecycler
 
 import android.graphics.Rect
 import android.util.TypedValue

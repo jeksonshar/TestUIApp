@@ -1,4 +1,4 @@
-package com.example.testuiapp
+package com.example.testuiapp.business.models
 
 data class ModelRecyclerHorizontal(
     val rating: Float,
