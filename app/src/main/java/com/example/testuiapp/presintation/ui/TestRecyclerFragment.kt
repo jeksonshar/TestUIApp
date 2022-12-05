@@ -1,6 +1,7 @@
 package com.example.testuiapp.presintation.ui
 
 import android.os.*
+import android.util.Log
 import android.view.HapticFeedbackConstants
 import android.view.LayoutInflater
 import android.view.View
@@ -32,11 +33,17 @@ class TestRecyclerFragment : Fragment() {
                      *  данный вариан вибрации работает стабильно, пермишн не нужен,
                      *  варианты закомментированые в прошлом коммите удалил, работали нестабильно и требовали пермишн
                      *  */
-                    /**
-                     *  данный вариан вибрации работает стабильно, пермишн не нужен,
-                     *  варианты закомментированые в прошлом коммите удалил, работали нестабильно и требовали пермишн
-                     *  */
                     requireView().performHapticFeedback(HapticFeedbackConstants.LONG_PRESS)
+                }
+
+                override fun setShakeAnimationState() {
+                    itemsListHorizontal.forEachIndexed { index, modelRecyclerHorizontal ->
+                        modelRecyclerHorizontal.changeAnimatedFlag( true)
+                        Log.d("TAG", "setShakeAnimationState: index = $index")
+//                        notifyAdapter(index)
+                    }
+//                    setSubmitList(itemsListHorizontal)
+                    notifyAdapter()
                 }
             }
         )
@@ -122,6 +129,18 @@ class TestRecyclerFragment : Fragment() {
     override fun onDestroyView() {
         _binding = null
         super.onDestroyView()
+    }
+
+    fun setSubmitList(list: List<ModelRecyclerHorizontal>) {
+        adapterHorizontal.submitList(list)
+    }
+
+    fun notifyAdapter(position: Int) {
+        adapterHorizontal.notifyItemChanged(position)
+    }
+
+    fun notifyAdapter() {
+        adapterHorizontal.notifyDataSetChanged()
     }
 
     private fun addHorizontalItemDecorator() {

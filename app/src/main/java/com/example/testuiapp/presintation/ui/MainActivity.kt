@@ -1,4 +1,4 @@
-package com.example.testuiapp
+package com.example.testuiapp.presintation.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -6,9 +6,8 @@ import android.view.animation.AnimationUtils
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
+import com.example.testuiapp.R
 import com.example.testuiapp.databinding.ActivityMainBinding
-import com.example.testuiapp.presintation.ui.BottomSheetDefineFragment
-import com.example.testuiapp.presintation.ui.BottomSheetSelectActivityFragment
 
 class MainActivity : AppCompatActivity() {
 

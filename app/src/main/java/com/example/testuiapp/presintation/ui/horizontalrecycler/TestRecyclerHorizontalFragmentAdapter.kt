@@ -1,5 +1,6 @@
 package com.example.testuiapp.presintation.ui.horizontalrecycler
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.view.animation.Animation
@@ -22,7 +23,16 @@ class TestRecyclerHorizontalFragmentAdapter(
     }
 
     override fun onBindViewHolder(holder: TestRecyclerHorizontalFragmentViewHolder, position: Int) {
-        holder.bind(getItem(position))
+        val animationShake = AnimationUtils.loadAnimation(holder.itemView.context, R.anim.animation_shake)
+        val item = getItem(position)
+
+        holder.bind(item)
+
+        if (item.isAnimate) {
+            Log.d("TAG", "onBindViewHolder: position = $position")
+            holder.itemView.startAnimation(animationShake)
+            item.changeAnimatedFlag(false)
+        }
     }
 
 }
@@ -34,7 +44,6 @@ class TestRecyclerHorizontalFragmentViewHolder(
 
     private var localModel: ModelRecyclerHorizontal? = null
     private val animationScale = AnimationUtils.loadAnimation(binding.root.context, R.anim.animation_scale)
-    private val animationShake = AnimationUtils.loadAnimation(binding.root.context, R.anim.animation_shake)
 
     init {
         binding.root.setOnLongClickListener { view ->
@@ -50,7 +59,7 @@ class TestRecyclerHorizontalFragmentViewHolder(
             }
 
             override fun onAnimationEnd(animation: Animation?) {
-                binding.root.startAnimation(animationShake)
+                clickListener.setShakeAnimationState()
             }
 
             override fun onAnimationRepeat(animation: Animation?) {
@@ -87,7 +96,7 @@ class TestRecyclerHorizontalItemsComparator : DiffUtil.ItemCallback<ModelRecycle
     }
 
     override fun areContentsTheSame(oldItem: ModelRecyclerHorizontal, newItem: ModelRecyclerHorizontal): Boolean {
-        return oldItem.title == newItem.title
+        return oldItem.title == newItem.title  && oldItem.isAnimate == newItem.isAnimate
     }
 }
 
