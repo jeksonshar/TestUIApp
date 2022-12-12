@@ -1,4 +1,4 @@
-package com.example.testuiapp.presintation.ui.horizontalrecycler
+package com.example.testuiapp.presentation.ui.horizontalrecycler
 
 import com.example.testuiapp.business.models.ModelRecyclerHorizontal
 

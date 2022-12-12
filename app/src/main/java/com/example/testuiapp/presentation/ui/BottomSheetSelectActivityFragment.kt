@@ -1,5 +1,6 @@
-package com.example.testuiapp.presintation.ui
+package com.example.testuiapp.presentation.ui
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -20,6 +21,11 @@ class BottomSheetSelectActivityFragment : BottomSheetDialogFragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         _binding = BottomSheetSelectActivityLayoutBinding.inflate(inflater, container, false)
+
+        binding.btnViewCalling.setOnClickListener {
+            val intent = Intent(requireContext(), VideoCallingActivity::class.java)
+            startActivity(intent)
+        }
         return binding.root
     }
 

@@ -1,4 +1,4 @@
-package com.example.testuiapp.presintation.ui
+package com.example.testuiapp.presentation.ui
 
 import android.os.*
 import android.util.Log
@@ -10,13 +10,13 @@ import android.view.animation.AnimationUtils
 import androidx.fragment.app.Fragment
 import com.example.testuiapp.R
 import com.example.testuiapp.databinding.FragmentTestRecyclerBinding
-import com.example.testuiapp.presintation.ui.horizontalrecycler.MarginHorizontalItemDecorator
-import com.example.testuiapp.presintation.ui.horizontalrecycler.ModelHorizontalClickListener
-import com.example.testuiapp.presintation.ui.horizontalrecycler.TestRecyclerHorizontalFragmentAdapter
+import com.example.testuiapp.presentation.ui.horizontalrecycler.MarginHorizontalItemDecorator
+import com.example.testuiapp.presentation.ui.horizontalrecycler.ModelHorizontalClickListener
+import com.example.testuiapp.presentation.ui.horizontalrecycler.TestRecyclerHorizontalFragmentAdapter
 import com.example.testuiapp.business.models.ModelRecyclerHorizontal
 import com.example.testuiapp.business.models.ModelVertical
-import com.example.testuiapp.presintation.ui.verticalrecycler.MarginVerticalItemDecorator
-import com.example.testuiapp.presintation.ui.verticalrecycler.TestRecyclerVerticalFragmentAdapter
+import com.example.testuiapp.presentation.ui.verticalrecycler.MarginVerticalItemDecorator
+import com.example.testuiapp.presentation.ui.verticalrecycler.TestRecyclerVerticalFragmentAdapter
 
 class TestRecyclerFragment : Fragment() {
 

@@ -1,4 +1,4 @@
-package com.example.testuiapp.presintation.ui.util
+package com.example.testuiapp.presentation.ui.util
 
 import android.content.Context
 import android.util.AttributeSet

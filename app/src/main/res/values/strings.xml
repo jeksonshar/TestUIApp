@@ -28,4 +28,9 @@
     <string name="antigravity">Antigravity</string>
     <string name="aqua_gym">Aqua gym</string>
     <string name="arrow_right"><![CDATA[>]]></string>
+    
+    <string name="agora_app_id">a62ad8679daa4cf9a6126b4e9fca1ad2</string>
+    <string name="agora_app_token">007eJxTYAji1be7lcL3zrW06XBa7eeJM1WP3HRZWaL2L/mnpeWpP1UKDIlmRokpFmbmlimJiSbJaZaJZoZGZkkmqZZpyYmGiSlGMxomJDcEMjIsvv2UhZEBAkF8HoaS1OIS54zEvLzUHEMGBgDNGSTp</string>
+    <string name="view_calling">View calling</string>
+
 </resources>

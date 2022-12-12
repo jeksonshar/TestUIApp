@@ -1,4 +1,4 @@
-package com.example.testuiapp.presintation.ui
+package com.example.testuiapp.presentation.ui
 
 import android.os.Bundle
 import android.view.LayoutInflater

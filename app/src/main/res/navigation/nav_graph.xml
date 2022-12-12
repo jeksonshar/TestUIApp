@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/testRecyclerFragment"
-        android:name="com.example.testuiapp.presintation.ui.TestRecyclerFragment"
+        android:name="com.example.testuiapp.presentation.ui.TestRecyclerFragment"
         android:label="TestRecyclerFragment"
         tools:layout="@layout/fragment_test_recycler"/>
 </navigation>

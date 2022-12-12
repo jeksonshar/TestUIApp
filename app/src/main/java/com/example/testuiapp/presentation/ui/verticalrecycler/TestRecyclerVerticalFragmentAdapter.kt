@@ -1,4 +1,4 @@
-package com.example.testuiapp.presintation.ui.verticalrecycler
+package com.example.testuiapp.presentation.ui.verticalrecycler
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

@@ -1,4 +1,4 @@
-package com.example.testuiapp.presintation.ui
+package com.example.testuiapp.presentation.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
